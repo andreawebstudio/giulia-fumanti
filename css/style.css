@@ -237,8 +237,14 @@ strong { font-weight: 600; color: var(--espresso); }
 
 /* ---------- Card (sempre su sfondo diverso dalla sezione) ---------- */
 .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 2.4vw, 36px); align-items: stretch; }
-.grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 2.6vw, 36px); max-width: 780px; margin: 0 auto; align-items: start; }
-.grid-2 .card { height: auto; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 2.6vw, 36px); max-width: 780px; margin: 0 auto; align-items: stretch; }
+/* Le due card hanno sempre la stessa dimensione: titoli e "Scopri di più" allineati */
+.grid-2 .card { height: 100%; }
+.grid-2 .card-body { flex: 1; display: flex; flex-direction: column; align-items: center; }
+.grid-2 .card-body h3 { min-height: 2.24em; display: flex; align-items: center; justify-content: center; }
+.grid-2 .card-tagline { min-height: 2.8em; margin-bottom: 18px; }
+.grid-2 .more-toggle { margin-top: auto; }
+.grid-2 .card-more { width: 100%; }
 .card { background: var(--white); border-radius: var(--radius); height: 100%; box-shadow: var(--shadow-soft); }
 .card h3 { font-size: clamp(1.55rem, .9vw + 1.2rem, 1.95rem); margin-bottom: 16px; text-wrap: balance; }
 .card p { color: var(--text-soft); }
